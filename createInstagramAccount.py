@@ -1,8 +1,15 @@
 '''
+The task:
+Create a program that makes instagram acccounts really fast:
+the user must input:
+an email, first name and last name, a username, a password, the date of birth.
+
+a big problem:
 ***    THIS PROGRAM IS ONE HALF OF INSTAGRAM ACCOUNT CREATOR, BECAUSE THERE IS ONE MORE STEP TO COMPLETE THE PROCESS AND THAT IS:
 YOU NEED TO GET THE ACTIVATION CODE FROM YOUR EMAIL. AND ENTER IT INTO THE LAST FORM, AFTER WHICH YOU'RE GOOD TO GO!    ***
 '''
 
+# THE SOLUTION:
 
 # Imported relevant modules
 from selenium import webdriver
@@ -25,7 +32,6 @@ def startBrowser():
     driver.maximize_window()
 
 
-
 def acceptCookies():
     '''
     This method is used to accept all instagram cookies.
@@ -36,6 +42,7 @@ def acceptCookies():
     cookiesBox.click()
     time.sleep(2)
 
+    
 # Let's start filling in first forms!
 def completeForms(mail, fullName, userName, password):
     '''
@@ -60,6 +67,7 @@ def completeForms(mail, fullName, userName, password):
     passwordBox.send_keys(password)
     passwordBox.submit()
 
+    
 # Let's start filling in second forms!
 def setBirthday(month, day, year):
     '''
@@ -82,6 +90,7 @@ def setBirthday(month, day, year):
     confirmBox = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, confirmBoxLocator)))
     confirmBox.click()
 
+    
 def mainFunction(mail, fullName, userName, password, month, day, year):
     '''
     This is the main method that combines all functions for the final result.
@@ -103,6 +112,7 @@ def mainFunction(mail, fullName, userName, password, month, day, year):
         print("You entered the wrong parameter... please try again!")
         driver.quit()
 
+        
 mail = input("Please enter a valid e-mail address: ")
 fullName = input("Please enter your full name: ")
 userName = input("Please create a valid username: ")
