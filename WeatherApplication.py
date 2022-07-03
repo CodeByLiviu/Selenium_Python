@@ -45,7 +45,7 @@ def searchOnGoogle(keyWord):
 def getWeather():
     '''
     This method is used to obtain all day and night temperatures for the current day and the coming week.
-    :return: data will be added to a dictionary like this: {day: {time of day: temperature, time of night:temperature}
+    :return: data will be added to a dictionary like this: {day: {time of day: temperature, time of night: temperature}}
     '''
     bigDict = {}
     smallDict = {}
